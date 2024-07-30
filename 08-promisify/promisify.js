@@ -1,18 +1,23 @@
-const fs = require("fs");
-const util = require("util");
+// const fs = require("fs");
+// const util = require("util");
+import { writeFile } from "fs";
+import util from "util";
 
-// fs.writeFile("./archivos/archivo/", "12345678" , ()=>{
-//     console.log("ok")
-// } )
+// fs.writeFile("./files/file/", "12345678", () => {
+//   console.log("ok");
+// });
 
+// writeFile("./files/file/", "12345678", (error) => {
+//   if (error) console.log("error");
+//   else console.log("ok");
+// });
 
-const writeFilePromesa = util.promisify(fs.writeFile);
+const writeFilePromisified = util.promisify(writeFile);
 
-
-writeFilePromesa("./archivos/archivo.txt", "12345678" )
-.then( ()=>{
-    console.log("ok")
-})
-.catch( ()=>{
-    console.log("error")
-})
+writeFilePromisified("./files/file.txt", "12345678")
+  .then(() => {
+    console.log("ok");
+  })
+  .catch(() => {
+    console.log("error");
+  });

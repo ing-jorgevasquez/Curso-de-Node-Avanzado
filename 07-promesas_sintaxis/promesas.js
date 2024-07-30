@@ -1,10 +1,11 @@
-const promesasNode = require("fs").promises;
+// const promesasNode = require("fs").promises;
+// import { promises } from "fs";
+// import { promises } from "node:fs";
+import promises from "node:fs/promises";
 
-
-promesasNode.copyFile("./archivos/original.pdf" , "./archivos/copia.txt")
-            .then(() => console.log("copia terminada"))
-            .catch(() => console.log("no se puede copiar el archivo"))
-            .finally(() => console.log("...") )
-
-
-            
+promises
+//   .copyFile("./files/original.pdf", "./files/copy.txt")
+  .copyFile("./files/original.txt", "./files/copy.txt")
+  .then(() => console.log("copy finished"))
+  .catch(() => console.log("file cannot be copied"))
+  .finally(() => console.log("..."));

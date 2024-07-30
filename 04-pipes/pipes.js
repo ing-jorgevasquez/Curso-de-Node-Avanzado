@@ -1,10 +1,8 @@
-const fs = require("fs");
+import { createReadStream, createWriteStream } from "node:fs";
 
-const streamLectura = fs.createReadStream( "./archivos/base.txt" );
-const streamEscritura = fs.createWriteStream("./archivos/destino.txt");
+const readStream = createReadStream("./files/source.txt");
+const writeStream = createWriteStream("./files/target.txt");
 
-streamLectura.pipe(streamEscritura);
+readStream.pipe(writeStream);
 
-streamLectura.on("end" , () => {
-    console.log("proceso finalizado");
-});
+readStream.on("end", () => console.log("process finished"));
