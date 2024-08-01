@@ -1,12 +1,12 @@
-const express = require("express");
+// const express = require("express");
+import express from "express";
 const app = express();
-const puerto = 3000;
+const port = 3000;
 
-app.get('/' , (request, respuesta)=> {
-    respuesta.send('Hola Mundo')
-})
+app.get("/", (request, response) => {
+  response.send("Hello world express.js");
+});
 
-
-app.listen( puerto , ()=>{ 
-    console.log(`escuchando el puerto ${puerto}!`)
-})
+app.listen(port, () => {
+  console.log(`listening on the port ${port}!`);
+});

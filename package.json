@@ -16,5 +16,8 @@
     "url": "https://github.com/ing-jorgevasquez/Curso-de-Node-Avanzado/issues"
   },
   "homepage": "https://github.com/ing-jorgevasquez/Curso-de-Node-Avanzado#readme",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }
